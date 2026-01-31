@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>پنل پست‌ها</title>
+<link rel="stylesheet" href="/static/css/my_style.css">
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align:center; color:#d63384;">📖 همه پست‌ها</h1>
+
+    {% for category, category_posts in posts.items() %}
+        <h2 style="color:#c2255c; margin-top:30px;">{{ category.upper() }}</h2>
+        <div class="post-grid">
+        {% for post in category_posts %}
+            <div class="post-card">
+                <h3>{{ post.title }}</h3>
+                <div class="post-actions">
+                    <a href="{{ url_for('edit_post', category=category, index=loop.index0) }}">
+                        <button class="edit">ویرایش</button>
+                    </a>
+                    <form method="POST" action="{{ url_for('delete_post', category=category, index=loop.index0) }}" style="display:inline;">
+                        <button type="submit" class="delete">حذف</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>

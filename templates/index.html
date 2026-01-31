@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='lumea.png') }}">
+
+
+  <meta charset="UTF-8" />
+  <title>Luméa</title>
+
+  <!-- لینک CSS بوت‌استرپ حتما اضافه کن -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('/static/wallpaper.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-color: rgb(195, 195, 195);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: x-large;
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
+    
+    .logo {
+      width: 100px;
+      height: auto;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      color: white !important;
+    }
+
+    .nav-link:hover {
+      color: #ffd0d0 !important;
+      text-shadow: 0 0 15px #ff89ab;
+      
+      
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-black bg-black" style="text-shadow: 2px 2px 10px rgb(255, 255, 255);">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="/" style="color: white;">
+        <img src="/static/Lumea.png" style="text-shadow: 2px 2px 10px rgb(255, 255, 255); " alt="Home" class="logo">
+        Home
+      </a>
+      
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item" style="font-size:25px;"><a class="nav-link" href="/about">|   About   |</a></li>
+          <br>
+          <li class="nav-item" style="font-size:25px;"><a class="nav-link" href="/letters">|   Letters I Never Sent   |</a></li>
+          <br>
+          <li class="nav-item" style="font-size:25px;"><a class="nav-link" href="/goals">|   My Goals   |</a></li>
+          <br>
+          <li class="nav-item" style="font-size:25px;"><a class="nav-link" href="/future">|   Dear Future   |</a></li>
+          <br>
+          <li class="nav-item" style="font-size:25px;"><a class="nav-link" href="/ach">|   Today's achievement    |</a></li>
+          <br>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div style="position: relative;  width: 100%; height: 700px; object-fit: cover;">
+    <video id="videoSlider" autoplay muted playsinline style="width: 100%; height: 700px; object-fit: cover;">
+      <source src="/static/main3.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video></div>
+    
+    
+  
+    <!-- متن روی ویدیو -->
+    
+  <script>
+    const videoPaths = [
+      "/static/main3.mp4"
+    ];
+  
+    let currentVideo = 0;
+    const videoElement = document.getElementById("videoSlider");
+  
+    videoElement.addEventListener("ended", () => {
+      // برو سراغ ویدیوی بعدی
+      currentVideo = (currentVideo + 1) % videoPaths.length;
+      videoElement.src = videoPaths[currentVideo];
+      videoElement.play();
+    });
+  </script>
+      <br><br><br><br><br>
+
+    <img id="lumea" src="/static/Lumea.png" alt="Slideshow" style="width:500px; height:auto; display:block; margin: 0 auto; border-radius: 20px;">
+    <br><br><br><br><br>
+
+    <h1 style="
+                font-size: 50px; color: #000000;
+                text-shadow: 2px 2px 10px rgb(255, 142, 142);
+                font-family: Gabriola;">
+      <strong>Dear future... I'm coming for you.</strong><br>
+      <strong>For you, your BMWs, and your world-famous platform — Vibella.</strong><br>
+      <strong>This is where I see you, and my future diaries. Money, Power, Life.</strong><br>
+      <strong>It's all real.</strong><br>
+      <strong>*2025*</strong>
+</h1>
+<br><br><br><br><br>
+
+  
+    
+    <div style="display: flex; justify-content: center; gap: 20px; ">
+    <a href="/about" style="text-decoration: none; " style="touch-action: auto;">
+      <img src="/static/about_me (1).png" style="width:250px; border-radius: 20px;">
+    </a>
+  
+    <a href="/letters" style="text-decoration: none;">
+      <img src="/static/letters (1).png" style="width:250px; border-radius: 20px;">
+    </a>
+
+    <a href="/future" style="text-decoration: none;">
+      <img src="/static/future.png" style="width:250px; border-radius: 20px;">
+    </a>
+
+    <a href="/goals" style="text-decoration: none;">
+      <img src="/static/goals.png" style="width:250px; border-radius: 20px;">
+    </a>
+
+    <a href="/ach" style="text-decoration: none;">
+      <img src="/static/ach.png" style="width:250px; border-radius: 20px;">
+    </a>
+  </div>
+  <br><br><br><br><br>
+
+  
+  <!-- اسکریپت بوت‌استرپ پایین صفحه -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
